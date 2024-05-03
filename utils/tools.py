@@ -26,30 +26,34 @@ def xml_writer(input_data:dict, item_type:str):
 
 
     price = str(input_data["price"])
-    
+    phone_number = str(input_data["phone_number"])
 
     with open(XML_SOURCE, "w", encoding="utf-8") as f : 
         f.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<items>\n")
 
-    with open(XML_SOURCE, "a", encoding="utf-8") as f : 
-        f.write("<item>\n"+
-                "<type>"+item_type+"</type>\n"+
-                "<first_name>"+input_data["first_name"]+"</first_name>\n"+
-                "<last_name>"+input_data["last_name"]+"</last_name>\n"+
-                "<request_date>"+datetime.now().strftime("%Y-%m-%d")+"</request_date>\n"+
-                "<last_date>"+datetime.now().strftime("%Y-%m-%d")+"</last_date>\n"+
-                #"<price>"+price+"</price>\n"+     
-                "<device>"+input_data["device"]+"</device>\n"+
-                "<brand>"+input_data["brand"]+"</brand>\n"+
-                "<model>"+input_data["model"]+"</model>\n"+
-                "<state>"+input_data["state"]+"</state>\n"+
-                "<operator>"+input_data["operator"]+"</operator>\n"+
-                "<left_accessory>"+input_data["left_accessory"]+"</left_accessory>\n"+
-                "<unlock_code>"+input_data["unlock_code"]+"</unlock_code>\n"+
-                "<color>"+input_data["color"]+"</color>\n"+
-                "<action>"+input_data["action"]+"</action>\n"+
-                "<url>"+input_data["url"]+"</url>\n"+
-                "<muletto>"+input_data["muletto"]+"</muletto>\n")
+    f = open(XML_SOURCE, "a", encoding="utf-8")
+    try:
+        f.write("<item>\n")
+        f.write("<type>" + item_type + "</type>\n")
+        f.write("<first_name>" + input_data["first_name"] + "</first_name>\n")
+        f.write("<last_name>" + input_data["last_name"] + "</last_name>\n")
+        f.write("<request_date>" + datetime.now().strftime("%Y-%m-%d") + "</request_date>\n")
+        f.write("<last_date>" + datetime.now().strftime("%Y-%m-%d") + "</last_date>\n")
+        f.write("<price>" + price + "</price>\n")
+        f.write("<phone_number>" + phone_number + "</phone_number>\n")
+        f.write("<device>" + input_data["device"] + "</device>\n")
+        f.write("<brand>" + input_data["brand"] + "</brand>\n")
+        f.write("<model>" + input_data["model"] + "</model>\n")
+        f.write("<state>" + input_data["state"] + "</state>\n")
+        f.write("<operator>" + input_data["operator"] + "</operator>\n")
+        f.write("<left_accessory>" + input_data["left_accessory"] + "</left_accessory>\n")
+        f.write("<unlock_code>" + str(input_data["unlock_code"]) + "</unlock_code>\n")
+        f.write("<color>" + input_data["color"] + "</color>\n")
+        f.write("<action>" + input_data["action"] + "</action>\n")
+        f.write("<url>" + input_data["url"] + "</url>\n")
+        f.write("<muletto>" + input_data["muletto"] + "</muletto>\n")
+    finally:
+        f.close()
 
     with open(XML_SOURCE, "a",  encoding="utf-8") as f : 
         f.write("</item>\n</items>\n")
