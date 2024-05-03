@@ -38,7 +38,7 @@ def xml_writer(input_data:dict, item_type:str):
                 "<last_name>"+input_data["last_name"]+"</last_name>\n"+
                 "<request_date>"+datetime.now().strftime("%Y-%m-%d")+"</request_date>\n"+
                 "<last_date>"+datetime.now().strftime("%Y-%m-%d")+"</last_date>\n"+
-                "<price>"+price+"</price>\n"+     
+                #"<price>"+price+"</price>\n"+     
                 "<device>"+input_data["device"]+"</device>\n"+
                 "<brand>"+input_data["brand"]+"</brand>\n"+
                 "<model>"+input_data["model"]+"</model>\n"+
