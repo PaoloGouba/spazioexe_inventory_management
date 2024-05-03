@@ -251,7 +251,7 @@ with col_2:
                 "device" : device,
                 "brand" : brand,
                 "model" : model,
-                #"price" : price,
+                "price" : price,
                 "state" : state,
                 "operator" : operator,
                 "left_accessory" : left_accessory,
