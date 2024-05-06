@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricevuta di Riparazione Telefonica</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .receipt{
+            box-shadow: 6px 6px 10px rgba(95, 95, 95, 0.437);
+            width: 45%;
+            margin: auto;
+        }
+
+        .receipt-head{
+            display:flex;
+            align-items: flex-start;
+            gap:400px;
+            border-bottom: 2px solid black;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .company-details{
+            text-align: right;
+        }
+
+        .client-details{
+            padding: 10px;
+            width: 40%
+        }
+
+        .client-details p{
+            margin: 5px;
+            font-weight:500;
+            color: #3f3f3f;
+        }
+
+        .repair-info{
+            margin-top: 50px;
+        }
+
+        table{
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+        .table-head{
+            background-color: rgb(207, 215, 233);
+            padding: 15px;
+        }
+
+        .table-data{
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border: 1px solid #303030;
+        }
+
+        .terms-conditions{
+            width: 60%;
+            margin: 40px auto;
+            text-align: center;
+
+        }
+
+        .banner{
+            text-align: center;
+            padding: 10px;
+        }
+
+        .banner img{
+            width: fit-content;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- full receipt details -->
+    <div class="receipt">
+        <!-- company details -->
+        <div class="receipt-head">
+            <div class="receipt-header">
+                <img src="images/logo.webp" alt="spazioexe logo">
+            </div>
+            <div class="company-details">
+                <strong>Scheda : #RP20240503-1</strong><br/>
+                Spazio Ex&#233; s.r.l.<br/>
+                via Roma 7<br/>
+                San Vito al Tagliamento, 33078 PN <br/>
+                Tel: 00334686090978
+            </div>
+        </div>
+
+        <!-- client details -->
+        <div class="client-details">
+            <h3>DETTAGLI CLIENTE</h3>
+            <p>Giovanni Bruno</p>
+            <p>2024-05-06</p>
+            <p>Ipad</p>
+            <p>1234567890</p>
+        </div>
+
+        <!-- description of service given -->
+        <div class="repair-info">
+            <table>
+                <tr>
+                    <th class="table-head">Descrizione</th>
+                    <th  class="table-head">Costo</th>
+                </tr>
+                <tr>
+                    <td class="table-data">Cambiare Schermo</td>
+                    <td class="table-data">&euro;707</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Pellicola Schermo</td>
+                    <td class="table-data">&euro;707</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Aggiunta Pellicola Schermo</td>
+                    <td class="table-data">&euro;707</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- terms and conditions -->
+        <div class="terms-conditions">
+            <h4>Termini e Condizioni</h4>
+            <div class="term">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est numquam obcaecati necessitatibus at id cumque sit molestias quasi ab eum mollitia rerum esse corporis, harum eligendi quis quibusdam dolore in.</p>
+            </div>
+        </div>
+
+        <!-- banner spot -->
+        <div class="banner">
+            <img src="images/banner.png" alt="banner spazio exe">
+        </div>
+    </div>
+</body>
+</html>
