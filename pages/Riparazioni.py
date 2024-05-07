@@ -205,8 +205,8 @@ with col_2:
                 'color': st.text_input("Colore"),
                 'action': st.text_input("Azione"),
                 'url': st.text_input("Link"),
-                'muletto': st.checkbox("Muletto"),
-                'left_accessory': st.checkbox("Accessori lasciati")
+                'muletto': str(st.checkbox("Muletto")),
+                'left_accessory': str(st.checkbox("Accessori lasciati"))
             }
 
             submit_button = st.form_submit_button("Salva Modifiche")
@@ -257,6 +257,11 @@ with col_1:
         st.caption('Lista riparazioni')
         # Mostra il DataFrame filtrato
         st.dataframe(filtered_df)
+
+        valori_indice = list(filtered_df.index)
+        st.write("Valori dell'indice:", valori_indice)
+
+
     try :
         i = 0
         for row in filtered_df.itertuples():
@@ -356,16 +361,8 @@ with col_1:
 
 
 
-
-
-
 ## Footer
 
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('''<small>[Spazio Exé - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
-
-
-
-
-
