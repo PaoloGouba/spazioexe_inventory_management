@@ -7,7 +7,7 @@ from xhtml2pdf import pisa
 #from utils.xslt import transform_xml
 
 # CONST 
-REP_FILE_NAME = 'Data Model - Gestionale Spazio Exe'
+REP_FILE_NAME = 'SpazioExe'
 DEVICES_FILE_NAME = ''
 ACC_FILE_NAME = ''
 CASSA_FILE_NAME = 'Cassa'
