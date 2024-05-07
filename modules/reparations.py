@@ -17,7 +17,7 @@ def remove_reparation(worksheet : Worksheet, row_id):
     worksheet.delete_rows(row_id + 1)
 
 def update_reparation(worksheet : Worksheet, row_id, reparation_data):
-    worksheet.update('A{}:Z{}'.format(row_id, row_id), [reparation_data])
+    worksheet.update('A{}:Z{}'.format(row_id, row_id), [[reparation_data]])
 
 def fetch_reparations(worksheet : Worksheet):
     data = worksheet.get_all_records()
