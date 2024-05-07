@@ -349,10 +349,10 @@ with col_1:
                 st.write(f"Muletto : {muletto}")
             if i == 1 :
                 break
-            
-    except :
+           
+    except Exception as e:
         #raise
-        st.info("Scegli la riparazione da consultare") 
+        st.info("Scegli la riparazione da consultare" + str(e)) 
 
 
 
@@ -364,6 +364,7 @@ with col_1:
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('''<small>[Spazio Exé - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
+
 
 
 
