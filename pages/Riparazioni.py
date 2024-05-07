@@ -171,7 +171,7 @@ with col_2:
                 file_download_name = gen_recap(input_data,temp_file_name)
                 st.success("Reparation aggiunta con successo!")
             except Exception as e:
-                raise
+                #raise
                 st.error(f"Errore nella convalida dei dati: {str(e)}")
      
 
@@ -218,7 +218,6 @@ with col_2:
                     reparations_worksheet.update(f'A{selected_row_index + 2}:D{selected_row_index + 2}', [list(valid_data.dict().values())])
                     st.success("Modifiche salvate con successo!")
                 except Exception as e:
-                    raise
                     st.error(f"Errore di validazione: {str(e)}")
 
                 # Ricarica i dati e aggiorna la visualizzazione
@@ -352,7 +351,7 @@ with col_1:
                 break
             
     except :
-        raise
+        #raise
         st.info("Scegli la riparazione da consultare") 
 
 
@@ -365,7 +364,6 @@ with col_1:
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('''<small>[Spazio Exé - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
-
 
 
 
