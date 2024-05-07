@@ -158,8 +158,8 @@ with col_2:
             'color': st.text_input("Colore"),
             'action': st.text_input("Azione"),
             'url': st.text_input("Link"),
-            'muletto': st.checkbox("Muletto"),
-            'left_accessory': st.checkbox("Accessori lasciati")
+            'muletto': str(st.checkbox("Muletto")),
+            'left_accessory': str(st.checkbox("Accessori lasciati"))
         }
 
         if st.button('Aggiungi riparazione'):
