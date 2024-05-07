@@ -258,8 +258,13 @@ with col_1:
         # Mostra il DataFrame filtrato
         st.dataframe(filtered_df)
 
+
         valori_indice = list(filtered_df.index)
-        st.write("Valori dell'indice:", valori_indice)
+        if len(valori_indice) < 1 :
+            st.write("Valori dell'indice:", valori_indice)
+            if st.button("Elimina", type="secondary") :
+                remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
+                st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
 
 
     try :
@@ -361,8 +366,16 @@ with col_1:
 
 
 
+
+
+
 ## Footer
 
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('''<small>[Spazio Exé - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
+
+
+
+
+
