@@ -260,7 +260,7 @@ with col_1:
 
 
         valori_indice = list(filtered_df.index)
-        if len(valori_indice) < 1 :
+        if len(valori_indice) == 1 :
             st.write("Valori dell'indice:", valori_indice)
             if st.button("Elimina", type="secondary") :
                 remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
