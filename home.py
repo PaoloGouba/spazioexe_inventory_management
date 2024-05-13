@@ -28,12 +28,12 @@ with col_1:
     card(
         title="Dashboard",
         text="Una vista generale suoi tuoi dati",
-        url="https://www.google.com",
+        url="#",
     )
     card(
         title="Magazzino",
         text="Gestisci il magazzino Spazio Exé",
-        image="http://placekitten.com/300/250",
+        image="https://test-spazioexe-inventory.streamlit.app/Magazzino",
         url="http://localhost:8501/Dispositivi",
     )
 
@@ -41,14 +41,14 @@ with col_2:
     card(
         title="Centro Riparazioni",
         text="Gestisci le riparazioni Spazio Exé",
-        image="http://placekitten.com/300/250",
+        image="https://test-spazioexe-inventory.streamlit.app/Riparazioni",
         url="http://localhost:8501/Riparazioni",
     )
     card(
         title="Registro cassa",
         text="Some description",
         image="http://placekitten.com/300/250",
-        url="http://localhost:8501/Registro_cassa",
+        url="#",
     )
 
 
