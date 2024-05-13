@@ -1,10 +1,11 @@
+from modules.reparations import *
+from modules.models import Reparation
+from utils.tools import get_data, gen_recap
+
 import streamlit as st
 from streamlit_extras.row import row
 from streamlit_extras.app_logo import add_logo
 from streamlit_extras.card import card
-from modules.reparations import *
-from modules.models import Reparation
-from utils.tools import get_data, gen_recap
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -31,34 +32,7 @@ from streamlit_modal import Modal
 import streamlit.components.v1 as components
 
 
-modal = Modal(
-    "Demo Modal", 
-    key="demo-modal",
-    
-    # Optional
-    padding=20,    # default value
-    max_width=744  # default value
-)
-#open_modal = st.button("Open")
-#if open_modal:
-#    modal.open()
 
-#if modal.is_open():
-#    with modal.container():
-#        st.write("Text goes here")
-
-#        html_string = '''
-#        <h1>HTML string in RED</h1>
-
-#        <script language="javascript">
-#          document.querySelector("h1").style.color = "red";
-#        </script>
-#       '''
-#        components.html(html_string)
-
-#        st.write("Some fancy text")
-#        value = st.checkbox("Check me")
-#        st.write(f"Checkbox checked: {value}")
 
 st.header('Riparazioni')
 
@@ -262,9 +236,43 @@ with col_1:
         valori_indice = list(filtered_df.index)
         if len(valori_indice) == 1 :
             st.write("Valori dell'indice:", valori_indice)
+
+            modal = Modal(
+            "Modifica scheda riparazione", 
+            key="demo-modal",
+            # Optional
+            padding=20,    # default value
+            max_width=744  # default value
+            )
+            open_modal = st.button("Modifica")
+            if open_modal:
+                modal.open()
+
+            if modal.is_open():
+                with modal.container():
+                    st.write("Text goes here")
+
+                    html_string = '''
+                        <h1>HTML string in RED</h1>
+
+                        <script language="javascript">
+                        document.querySelector("h1").style.color = "red";
+                        </script>
+                    '''
+                    components.html(html_string)
+
+                    st.write("Some fancy text")
+                    value = st.checkbox("Check me")
+                    st.write(f"Checkbox checked: {value}")
+
+
             if st.button("Elimina", type="secondary") :
-                remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
-                st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
+                st.write(f"Sei sicuro di vole eliminare questa scheda ? ")
+                if st.button("Elimina scheda") :
+                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
+                    st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
+                else :
+                    pass    
 
 
     try :
