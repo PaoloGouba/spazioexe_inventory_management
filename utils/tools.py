@@ -8,7 +8,7 @@ from xhtml2pdf import pisa
 
 # CONST 
 REP_FILE_NAME = 'SpazioExe'
-DEVICES_FILE_NAME = ''
+DEVICES_FILE_NAME = 'Dispositivi'
 ACC_FILE_NAME = ''
 CASSA_FILE_NAME = 'Cassa'
 XML_SOURCE = 'temp_source.xml'
