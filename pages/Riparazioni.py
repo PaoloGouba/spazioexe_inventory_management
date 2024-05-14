@@ -126,15 +126,20 @@ with col_2:
             'brand': st.text_input("Marca"),
             'model': st.text_input("Modello"),
             'price': st.text_input("Prezzo"),
-            'state': st.selectbox("Stato", options=["Consegnato", "In attesa", "Chiamato", "Annullato", "In sospeso"]),
+            'acconto': st.text_input("Acconto"),
+            #'state': st.selectbox("Stato", options=["Consegnato", "In attesa", "Chiamato", "Annullato", "In sospeso"]),
             'operator': st.text_input("Operatore"),
             'unlock_code': st.text_input("Codice sblocco"),
             'color': st.text_input("Colore"),
             'action': st.text_input("Azione"),
             'url': st.text_input("Link"),
             'muletto': str(st.checkbox("Muletto")),
-            'left_accessory': str(st.checkbox("Accessori lasciati"))
+            'left_accessory': str(st.checkbox("Accessori lasciati")), 
+            'descrizione_acessory_lasciati' : ''
         }
+
+        if input_data["left_accessory"] :
+            input_data["descrizione_acessory_lasciati"] = st.text_input("Info accessory lasciati")
 
         if st.button('Aggiungi riparazione'):
             try:
@@ -145,8 +150,8 @@ with col_2:
                 file_download_name = gen_recap(input_data,temp_file_name)
                 st.success("Reparation aggiunta con successo!")
             except Exception as e:
-                #raise
-                st.error(f"Errore nella convalida dei dati: {str(e)}")
+                raise
+                #st.error(f"Errore nella convalida dei dati: {str(e)}")
      
 
     with st.expander("Modifica riparazione") :
@@ -235,36 +240,7 @@ with col_1:
 
         valori_indice = list(filtered_df.index)
         if len(valori_indice) == 1 :
-            st.write("Valori dell'indice:", valori_indice)
-
-            modal = Modal(
-            "Modifica scheda riparazione", 
-            key="demo-modal",
-            # Optional
-            padding=20,    # default value
-            max_width=744  # default value
-            )
-            open_modal = st.button("Modifica")
-            if open_modal:
-                modal.open()
-
-            if modal.is_open():
-                with modal.container():
-                    st.write("Text goes here")
-
-                    html_string = '''
-                        <h1>HTML string in RED</h1>
-
-                        <script language="javascript">
-                        document.querySelector("h1").style.color = "red";
-                        </script>
-                    '''
-                    components.html(html_string)
-
-                    st.write("Some fancy text")
-                    value = st.checkbox("Check me")
-                    st.write(f"Checkbox checked: {value}")
-
+            print("Valori dell'indice:", valori_indice)
 
             if st.button("Elimina", type="secondary") :
                 st.write(f"Sei sicuro di vole eliminare questa scheda ? ")
@@ -287,6 +263,7 @@ with col_1:
             brand = row.brand
             model = row.model
             price = row.price
+            acconto = row.acconto
             state = row.state
             operator = row.operator
             left_accessory = row.left_accessory
@@ -295,6 +272,7 @@ with col_1:
             action = row.action
             url = row.url
             muletto = row.muletto
+            descrizione_acessori_lasciati = row.descrizione_acessori_lasciati
 
             c_text : str = "Cliente : " + first_name + " " + last_name + "\n" + "Azione : " + action
 
@@ -324,6 +302,7 @@ with col_1:
                 "brand" : brand,
                 "model" : model,
                 "price" : price,
+                "acconto" : acconto,
                 "state" : state,
                 "operator" : operator,
                 "left_accessory" : left_accessory,
@@ -331,7 +310,8 @@ with col_1:
                 "color" : color,
                 "action" : action,
                 "url" : url,
-                "muletto" : muletto
+                "muletto" : muletto,
+                "descrizione_acessori_lasciati" : descrizione_acessori_lasciati
             }
 
             gen_recap(download_input_data)
@@ -356,12 +336,13 @@ with col_1:
                 st.write("Dispositivo : " + device)
                 st.write(f"Marca : {brand}")
                 st.write(f"Modello : {model}")
-                st.write(f"Prezzo : {price}")
+                st.write(f"Prezzo : {price} EURO")
+                st.write(f"Acconto : {acconto} EURO")
                 st.write(f"Condizione : {state}")
                 st.write(f"Colore : {color}")
                 st.subheader("Altre informazioni")
                 st.write(f"Operatore : {operator}")
-                st.write(f"Accessorio lasciato : {left_accessory}")
+                st.write(f"Accessorio lasciato : {left_accessory} | {descrizione_acessori_lasciati}")
                 st.write(f"Codice sblocco : {unlock_code}")
                 st.write(f"URL : {url}")
                 st.write(f"Muletto : {muletto}")
@@ -369,7 +350,7 @@ with col_1:
                 break
            
     except Exception as e:
-        #raise
+        raise
         st.info("Scegli la riparazione da consultare" + str(e)) 
 
 
