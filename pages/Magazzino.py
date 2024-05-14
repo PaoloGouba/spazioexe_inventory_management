@@ -110,36 +110,6 @@ with col_1:
                         }
                 )
 
-            download_input_data = {
-                "request_date" : "",
-                "first_name" : customer_name,
-                "last_name" : customer_last_name,
-                "phone_number" : "",
-                "device" : device_type,
-                "brand" : brand,
-                "model" : model,
-                "price" : sell_price,
-                "state" : f"",
-                "operator" : "",
-                "left_accessory" : "",
-                "unlock_code" : "",
-                "color" : "",
-                "action" : "",
-                "url" : "",
-                "muletto" : ""
-            }
-
-
-            gen_recap(download_input_data)
-
-            with open("data/output.pdf", "rb") as file:
-                btn = st.download_button(
-                        label="Scarica PDF",
-                        data=file,
-                        file_name="output.pdf",
-                        mime="application/pdf"
-                    )
-
             with st.expander("Più informazioni") :
                 st.caption("Ref #76989JIBI") # dinamizzare
 
