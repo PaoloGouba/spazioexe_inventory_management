@@ -14,7 +14,7 @@ df = fetch_reparations(reparations_worksheet)
 
 st.set_page_config(
     page_icon="🧊",
-    page_title="Spazio Exé - Riparazioni", 
+    page_title="Spazio Exe - Riparazioni", 
     layout="wide",
     initial_sidebar_state="auto",
     menu_items={
@@ -207,7 +207,7 @@ with col_2:
     #with st.expander("Elimina riparazione"):
         #selected_index = st.selectbox("Seleziona l'ID della riga da rimuovere", range(len(df)))
         #if st.button('Rimuovi Reparation'):
-            #remove_reparation(reparations_worksheet, selected_index + 1)  # +1 perché l'indice del DataFrame parte da 0
+            #remove_reparation(reparations_worksheet, selected_index + 1)  # +1 perche l'indice del DataFrame parte da 0
             #st.success(f"Reparation rimossa con successo dalla riga {selected_index + 1}")
             #display_reparations()  # Aggiorna la visualizzazione dei dati
 
@@ -245,7 +245,7 @@ with col_1:
             if st.button("Elimina", type="secondary") :
                 st.write(f"Sei sicuro di vole eliminare questa scheda ? ")
                 if st.button("Elimina scheda") :
-                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
+                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perche l'indice del DataFrame parte da 0
                     st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
                 else :
                     pass    
@@ -362,7 +362,7 @@ with col_1:
 
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
-st.sidebar.markdown('''<small>[Spazio Exé - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
+st.sidebar.markdown('''<small>[Spazio Exe - Inventory Management v0.1](https://github.com/PaoloGouba/spazioexe_inventory_management)  | April 2024 | [Osiris Solutions](https://osirisolutions.com/)</small>''', unsafe_allow_html=True)
 
 
 
