@@ -91,10 +91,13 @@
             </div>
             <div class="company-details">
               <strong>Scheda : #RP20240503-1</strong><br/>
-              Spazio Ex&#233; s.r.l.<br/>
-              via Roma 7<br/>
+              Spazio Ex&#233;<br/>
+              P.IVA/C.F. BNDMNR98S22Z354H<br/>
+              VIA POMPONIO AMALTEO 16<br/>
               San Vito al Tagliamento, 33078 PN <br/>
-              Tel: 00334686090978
+              Tel: 00334686090978 <br/>
+              info@spazioexe.com<br/>
+              (39)376 175 1181
             </div>
           </div>
           
@@ -133,8 +136,11 @@
             <h4>Termini e Condizioni</h4>
             <div class="term">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quam orci, mollis nec iaculis ac, euismod sed eros. Etiam iaculis lectus elit, sed placerat orci facilisis suscipit. Aliquam quis arcu turpis. In viverra ultricies nibh eget rhoncus. Duis ut magna ac mi eleifend posuere. Sed fringilla semper lectus in bibendum. Sed dapibus felis nulla, ut venenatis tellus vestibulum eget. Proin leo lorem, venenatis at interdum sed, posuere posuere tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla sollicitudin enim eu orci feugiat luctus. Cras at diam nec eros tempus tempor vel eget eros. Pellentesque sed justo vel ipsum vestibulum varius at at nulla. Mauris blandit neque magna, et consectetur justo porta et. Quisque ultrices, leo at semper scelerisque, tellus nisl mollis ex, et interdum sem ligula vel leo.
-                Fusce augue sapien, dictum et metus sit amet, interdum volutpat augue. Sed id volutpat nunc. Cras a hendrerit lectus, sed egestas lectus. Integer vel lorem maximus, gravida sapien eu, rutrum neque. Aenean vitae dapibus dui. Praesent elementum felis ante, a faucibus justo condimentum nec. Cras in mi quam. Etiam vehicula lorem quis eros rutrum dignissim. Aliquam condimentum mollis urna eu congue. Sed quis sollicitudin dui, vel gravida odio. Sed varius urna nisi, at ullamcorper purus pretium nec. Cras nec tellus mauris. 
+                Prima di consegnare il tuo dispositivo in riparazione, effettua il backup di tutte le informazioni e dei dati salvati sul dispositivo per evitare la perdita o il danneggiamento durante il processo di test o ispezioni. Purtroppo Spazio Exe non è responsabile in nessuna circostanza, sia espressamente che implicitamente, per eventuali danni di qualsiasi tipo causati da perdita, danneggiamento o corruzione del contenuto dei dati durante la riparazione o la sostituzione del prodotto. Se il cliente smarrisce la copia cliente del modulo, potrà ritirare il prodotto con un valido documento di riconoscimento.<br/>
+                N.B. In alcuni casi, la riparazione del prodotto può comportare la perdita dei dati in esso contenuti: è ad esclusivo carico del cliente il salvataggio degli stessi prima dell'invio in riparazione. Punto Elettronico non si ritiene in alcun modo responsabile dei dati contenuti nel prodotto.<br/>
+                Il cliente è tenuto al ritiro del prodotto entro tre mesi (novanta giorni) dalla data di comunicazione di avvenuta riparazione, decorso tale termine Spazio Exe si riterrà libero di poter smaltire il prodotto a norma di legge in quanto non ritirato entro i termini indicati.<br/>
+                Il cliente accetta implicitamente le condizioni al momento della presa in carico dell'ordine.
+                
               </p>           
             </div>
           </div>
