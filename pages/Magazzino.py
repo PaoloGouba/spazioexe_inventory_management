@@ -135,7 +135,10 @@ with col_1:
                 st.subheader("Altre informazioni")
                 st.write("Venduto : " + sold)
                 st.write("Data vendita : " + selling_date)
-                st.write("Articolo : " + article_type)
+                if type(article_type) is not str :
+                    st.write("Articolo : " + str(article_type))
+                else :    
+                    st.write("Articolo : " + article_type)
 
 
             if i == 1 :
@@ -143,7 +146,7 @@ with col_1:
            
     except Exception as e:
         #raise
-        st.info("Scegli la riparazione da consultare" + str(e)) 
+        st.error("Errore : " + str(e)) 
 
 
 
@@ -234,19 +237,19 @@ with col_2:
             'device_type': st.selectbox("Tipo dispositivo", options=["TV", "PC", "Smartphone", "Tablet"]), 
             'price': st.number_input("Prezzo", min_value=0.0, format="%.2f"),
             'sell_price': st.number_input("Prezzo di vendita", min_value=0.0, format="%.2f"), 
-            'imei_code': st.text_input("imei_code"), 
-            'battery_health': float, 
+            'imei_code': st.text_input("IMEI"), 
+            'battery_health': st.text_input("Batteria %"), 
             'brand': st.text_input("Marca"), 
             'model': st.text_input("Modello"), 
             'grade': st.selectbox("Grado", options=["A", "B", "C", "D", "Premium"]), 
-            'capacity': st.text_input("capacity"), 
+            'capacity': st.text_input("Capacità"), 
             'status': st.selectbox("Stato", options=["Nuovo", "Usato", "Ricondizionato"]), 
-            'manufacturer': st.text_input("manufacturer"), 
+            'manufacturer': st.text_input("Produttore/Fabbricante"), 
             'sold': str(st.checkbox("Venduto")), 
-            'customer_name': st.text_input("customer_name"), 
-            'customer_last_name': st.text_input("customer_last_name"), 
-            'selling_date':  st.text_input("selling_date"), 
-            'article_type':  st.text_input("article_type"),
+            'customer_name': st.text_input("Nome"), 
+            'customer_last_name': st.text_input("Cognome"), 
+            'selling_date':  st.text_input("Data vendita"), 
+            'article_type':  st.text_input("Tipo di articolo"),
         }
 
         # Bottoni per operazioni
