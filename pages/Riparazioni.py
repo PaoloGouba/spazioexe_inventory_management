@@ -40,6 +40,45 @@ col_1, col_2 = st.columns(2)
 
 with col_2: 
 
+    with st.expander("Nuova riparazione") :
+        st.caption("Riparazione #C00001")
+        input_data = {
+            'first_name': st.text_input("Nome"),
+            'last_name': st.text_input("Cognome"),
+            'phone_number': st.text_input("Numero di telefono"),
+            'device': st.selectbox("Tipo dispositivo", options=["TV", "PC", "Smartphone", "Tablet"]),
+            'brand': st.text_input("Marca"),
+            'model': st.text_input("Modello"),
+            'price': st.number_input("Prezzo", value=None, placeholder="ex. 199.79",format="%.2f", min_value=1.00),
+            'acconto': st.text_input("Acconto"),
+            #'state': st.selectbox("Stato", options=["Consegnato", "In attesa", "Chiamato", "Annullato", "In sospeso"]),
+            'operator': st.text_input("Operatore"),
+            'unlock_code': st.text_input("Codice sblocco"),
+            'color': st.text_input("Colore"),
+            'action': st.text_input("Azione"),
+            'url': st.text_input("Link"),
+            'muletto': str(st.checkbox("Muletto")),
+            'left_accessory': str(st.checkbox("Accessori lasciati")), 
+            'descrizione_acessory_lasciati' : ''
+        }
+
+        if input_data["left_accessory"] :
+            input_data["descrizione_acessory_lasciati"] = st.text_input("Info accessory lasciati")
+
+        if st.button('Aggiungi riparazione'):
+            try:
+                reparation = Reparation(**input_data)
+                add_reparation(reparations_worksheet, list(reparation.model_dump().values()))
+                # generazione documento 
+                temp_file_name="Reparation_"+input_data["first_name"]+".pdf"  
+                file_download_name = gen_recap(input_data,temp_file_name)
+                st.success("Reparation aggiunta con successo!")
+            except Exception as e:
+                raise
+                #st.error(f"Errore nella convalida dei dati: {str(e)}")
+     
+
+
     with st.expander("Statistiche riparazioni", expanded=True) :
 
         insight_type = ("brand","")
@@ -112,48 +151,6 @@ with col_2:
         #    st.error('Il DataFrame non contiene le colonne "device" o "status". Verifica i dati.')
 
 
-
-
-
-
-    with st.expander("Nuova riparazione") :
-        st.caption("Riparazione #C00001")
-        input_data = {
-            'first_name': st.text_input("Nome"),
-            'last_name': st.text_input("Cognome"),
-            'phone_number': st.text_input("Numero di telefono"),
-            'device': st.selectbox("Tipo dispositivo", options=["TV", "PC", "Smartphone", "Tablet"]),
-            'brand': st.text_input("Marca"),
-            'model': st.text_input("Modello"),
-            'price': st.text_input("Prezzo"),
-            'acconto': st.text_input("Acconto"),
-            #'state': st.selectbox("Stato", options=["Consegnato", "In attesa", "Chiamato", "Annullato", "In sospeso"]),
-            'operator': st.text_input("Operatore"),
-            'unlock_code': st.text_input("Codice sblocco"),
-            'color': st.text_input("Colore"),
-            'action': st.text_input("Azione"),
-            'url': st.text_input("Link"),
-            'muletto': str(st.checkbox("Muletto")),
-            'left_accessory': str(st.checkbox("Accessori lasciati")), 
-            'descrizione_acessory_lasciati' : ''
-        }
-
-        if input_data["left_accessory"] :
-            input_data["descrizione_acessory_lasciati"] = st.text_input("Info accessory lasciati")
-
-        if st.button('Aggiungi riparazione'):
-            try:
-                reparation = Reparation(**input_data)
-                add_reparation(reparations_worksheet, list(reparation.model_dump().values()))
-                # generazione documento 
-                temp_file_name="Reparation_"+input_data["first_name"]+".pdf"  
-                file_download_name = gen_recap(input_data,temp_file_name)
-                st.success("Reparation aggiunta con successo!")
-            except Exception as e:
-                raise
-                #st.error(f"Errore nella convalida dei dati: {str(e)}")
-     
-
     with st.expander("Modifica riparazione") :
 
         # Visualizzazione dei dati con filtri
@@ -207,7 +204,7 @@ with col_2:
     #with st.expander("Elimina riparazione"):
         #selected_index = st.selectbox("Seleziona l'ID della riga da rimuovere", range(len(df)))
         #if st.button('Rimuovi Reparation'):
-            #remove_reparation(reparations_worksheet, selected_index + 1)  # +1 perche l'indice del DataFrame parte da 0
+            #remove_reparation(reparations_worksheet, selected_index + 1)  # +1 perché l'indice del DataFrame parte da 0
             #st.success(f"Reparation rimossa con successo dalla riga {selected_index + 1}")
             #display_reparations()  # Aggiorna la visualizzazione dei dati
 
@@ -245,7 +242,7 @@ with col_1:
             if st.button("Elimina", type="secondary") :
                 st.write(f"Sei sicuro di vole eliminare questa scheda ? ")
                 if st.button("Elimina scheda") :
-                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perche l'indice del DataFrame parte da 0
+                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
                     st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
                 else :
                     pass    
