@@ -75,7 +75,7 @@ class Device(BaseModel) :
     price : float
     sell_price : float
     imei_code : str
-    battery_health : float
+    battery_health : str
     brand : str
     model : str
     grade : GradeEnum 

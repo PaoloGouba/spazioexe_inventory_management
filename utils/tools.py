@@ -24,7 +24,6 @@ def get_data(worksheet : Worksheet):
 
 def xml_writer(input_data:dict, item_type:str):
 
-
     price = str(input_data["price"])
     phone_number = str(input_data["phone_number"])
     acconto = str(input_data["acconto"])
@@ -46,6 +45,7 @@ def xml_writer(input_data:dict, item_type:str):
         f.write("<brand>" + input_data["brand"] + "</brand>\n")
         f.write("<model>" + input_data["model"] + "</model>\n")
         f.write("<state>In attesa</state>\n")
+        f.write("<acconto>" + acconto + "</acconto>\n")
         f.write("<operator>" + input_data["operator"] + "</operator>\n")
         f.write("<left_accessory>" + input_data["left_accessory"] + "</left_accessory>\n")
         f.write("<unlock_code>" + str(input_data["unlock_code"]) + "</unlock_code>\n")
