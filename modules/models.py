@@ -58,7 +58,7 @@ class Reparation(BaseModel) :
     brand : str
     model : str
     price : float = 0.0 # DEFAULT
-    state : RepStatusEnum
+    state : RepStatusEnum = "In attesa"
     operator : str
     left_accessory : bool
     unlock_code : str
@@ -66,6 +66,8 @@ class Reparation(BaseModel) :
     action : str 
     url : str
     muletto : bool
+    acconto : float = 0.0
+    descrizione_acessory_lasciati : str = "Nessun accessorio lasciato"
 
 
 class Device(BaseModel) :

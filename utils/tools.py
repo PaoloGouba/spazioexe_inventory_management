@@ -7,8 +7,8 @@ from xhtml2pdf import pisa
 #from utils.xslt import transform_xml
 
 # CONST 
-REP_FILE_NAME = 'Data Model - Gestionale Spazio Exe'
-DEVICES_FILE_NAME = ''
+REP_FILE_NAME = 'SpazioExe'
+DEVICES_FILE_NAME = 'Dispositivi'
 ACC_FILE_NAME = ''
 CASSA_FILE_NAME = 'Cassa'
 XML_SOURCE = 'temp_source.xml'
@@ -27,6 +27,7 @@ def xml_writer(input_data:dict, item_type:str):
 
     price = str(input_data["price"])
     phone_number = str(input_data["phone_number"])
+    acconto = str(input_data["acconto"])
 
     with open(XML_SOURCE, "w", encoding="utf-8") as f : 
         f.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<items>\n")
@@ -44,13 +45,13 @@ def xml_writer(input_data:dict, item_type:str):
         f.write("<device>" + input_data["device"] + "</device>\n")
         f.write("<brand>" + input_data["brand"] + "</brand>\n")
         f.write("<model>" + input_data["model"] + "</model>\n")
-        f.write("<state>" + input_data["state"] + "</state>\n")
+        f.write("<state>In attesa</state>\n")
         f.write("<operator>" + input_data["operator"] + "</operator>\n")
         f.write("<left_accessory>" + input_data["left_accessory"] + "</left_accessory>\n")
         f.write("<unlock_code>" + str(input_data["unlock_code"]) + "</unlock_code>\n")
         f.write("<color>" + input_data["color"] + "</color>\n")
         f.write("<action>" + input_data["action"] + "</action>\n")
-        f.write("<url>" + input_data["url"] + "</url>\n")
+        f.write("<url><![CDATA[" + input_data["url"] + "]]></url>\n")
         f.write("<muletto>" + input_data["muletto"] + "</muletto>\n")
     finally:
         f.close()
