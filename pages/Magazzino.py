@@ -63,7 +63,7 @@ with col_1:
 
         valori_indice = list(filtered_df.index)
         if len(valori_indice) == 1:
-            st.write("Valori dell'indice:", valori_indice)
+            print("Valori dell'indice:", valori_indice)
             if st.button("Elimina", type="secondary"):
                 remove_device(inventory_worksheet, valori_indice[0] + 1)  # +1 perché l'indice del DataFrame parte da 0
                 st.success(f"Dispositivo rimosso con successo dalla riga {valori_indice[0] + 1}")
