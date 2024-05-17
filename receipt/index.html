@@ -79,6 +79,10 @@
         border: 1px solid black;
         text-align: center;
       }
+      .description {
+        background-color: rgb(207, 215, 233);
+      }
+
       .other-details {
         display: grid;
         grid-template-columns: auto auto;
@@ -90,6 +94,10 @@
         border: 1px solid black;
         text-align: center;
         padding: 5px;
+      }
+
+      .table-for-client-product {
+        display: flex;
       }
     </style>
   </head>
@@ -111,20 +119,39 @@
       </div>
 
       <!-- client details -->
-      <div class="client-details">
-        <div class="description">
-          <h2>DETTAGLI CLIENTE</h2>
+      <div class="table-for-client-product">
+        <div class="client-details">
+          <div class="description">
+            <h2>DETTAGLI CLIENTE</h2>
+          </div>
+          <div class="client-name">
+            <p>GIOVANNI BRUNO</p>
+          </div>
+          <div class="other-details">
+            <div class="left-side">N° SCHEDA</div>
+            <div class="right-side">2222</div>
+            <div class="left-side">DATA</div>
+            <div class="right-side">17-05-2024</div>
+            <div class="left-side">PRODOTTO</div>
+            <div class="right-side">IPHONE</div>
+          </div>
         </div>
-        <div class="client-name">
-          <p>GIOVANNI BRUNO</p>
-        </div>
-        <div class="other-details">
-          <div class="left-side">N° SCHEDA</div>
-          <div class="right-side">2222</div>
-          <div class="left-side">DATA</div>
-          <div class="right-side">17-05-2024</div>
-          <div class="left-side">PRODOTTO</div>
-          <div class="right-side">IPAD</div>
+
+        <div class="client-details">
+          <div class="description">
+            <h2>DETTAGLI PRODOTTO</h2>
+          </div>
+          <div class="client-name">
+            <p>APPLE</p>
+          </div>
+          <div class="other-details">
+            <div class="left-side">MODELLO</div>
+            <div class="right-side">IPHONE 18</div>
+            <div class="left-side">DATA</div>
+            <div class="right-side">17-05-2024</div>
+            <div class="left-side">PRODOTTO</div>
+            <div class="right-side">IPAD</div>
+          </div>
         </div>
       </div>
 
