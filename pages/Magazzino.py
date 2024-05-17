@@ -133,7 +133,7 @@ with col_2:
     with st.expander("Inserisci dispositivo"):
         if 'input_data' not in st.session_state:
             st.session_state['input_data'] = {
-                'device_type': '',
+                'device_type': 'TV',
                 'price': 0.0,
                 'sell_price': 0.0,
                 'imei_code': '',
