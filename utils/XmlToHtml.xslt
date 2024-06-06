@@ -70,14 +70,15 @@
           
           }
           
-          .banner{
-          text-align: center;
-          padding: 10px;
-          }
-          
-          .banner img{
-          width: fit-content;
-          width: 50%;
+.banner {
+    text-align: center;
+    padding: 10px;
+}
+
+.banner img {
+    width: 25%; /* Modifica la larghezza a 25% invece di 50% */
+}
+
           }
         </style>
       </head>
