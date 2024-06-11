@@ -65,7 +65,7 @@
           
           .terms-conditions{
           width: 60%;
-          margin: 40px auto;
+          margin: 10px auto;
           text-align: center;
           
           }
@@ -163,7 +163,7 @@
           
           <!-- banner spot -->
           <div class="banner">
-            <img src="img/new_banner.jpg" alt="banner spazio exe"/>
+            <img src="images/banner.png" alt="banner spazio exe"/>
           </div>
         </div>
       </body>
