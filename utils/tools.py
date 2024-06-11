@@ -47,12 +47,11 @@ def xml_writer(input_data:dict, item_type:str):
         f.write("<state>In attesa</state>\n")
         f.write("<acconto>" + acconto + "</acconto>\n")
         f.write("<operator>" + input_data["operator"] + "</operator>\n")
-        f.write("<left_accessory>" + input_data["left_accessory"] + "</left_accessory>\n")
+        f.write("<left_accessory>Accessori Lasciati : " + input_data["left_accessory"] + "</left_accessory>\n")
         f.write("<unlock_code>" + str(input_data["unlock_code"]) + "</unlock_code>\n")
         f.write("<color>" + input_data["color"] + "</color>\n")
         f.write("<action>" + input_data["action"] + "</action>\n")
-        f.write("<url><![CDATA[" + input_data["url"] + "]]></url>\n")
-        f.write("<muletto>" + input_data["muletto"] + "</muletto>\n")
+        f.write("<muletto>Muletto : " + input_data["muletto"] + "</muletto>\n")
     finally:
         f.close()
 
