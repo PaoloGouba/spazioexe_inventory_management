@@ -16,8 +16,18 @@ def remove_reparation(worksheet : Worksheet, row_id):
     # Gspread conta le righe a partire da 1
     worksheet.delete_rows(row_id + 1)
 
-def update_reparation(worksheet : Worksheet, row_id, reparation_data):
-    worksheet.update('A{}:Z{}'.format(row_id, row_id), [[reparation_data]])
+"""def update_reparation(worksheet : Worksheet, row_id, reparation_data):
+    worksheet.update('A{}:Z{}'.format(row_id, row_id), [[reparation_data]])"""
+
+def update_reparation(worksheet, row_id, reparation_data):
+    if isinstance(reparation_data, list):
+
+        print(reparation_data)
+        ciao = input("XXXXXXXXXXXXXXXXXXXXXXXX")
+        worksheet.update('A{}:Z{}'.format(row_id, row_id), [reparation_data])
+    else:
+        raise ValueError("reparation_data deve essere una lista")
+
 
 def fetch_reparations(worksheet : Worksheet):
     data = worksheet.get_all_records()
