@@ -163,7 +163,7 @@
           
           <!-- banner spot -->
           <div class="banner">
-            <img src="images/banner.png" alt="banner spazio exe"/>
+            <img src="img/new_banner.png" alt="banner spazio exe"/>
           </div>
         </div>
       </body>
