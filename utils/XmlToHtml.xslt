@@ -70,15 +70,15 @@
           
           }
           
-          .banner {
-              text-align: center;
-              padding: 10px;
+          .banner{
+          text-align: center;
+          padding: 10px;
           }
           
-          .banner img {
-              width: 25%; /* Modifica la larghezza a 25% invece di 50% */
+          .banner img{
+          width: fit-content;
+          width: 50%;
           }
-
         </style>
       </head>
       <body>
@@ -90,14 +90,13 @@
               <img src="img/logo.webp" alt="spazioexe logo"/>
             </div>
             <div class="company-details">
-              <strong>Scheda : #RP20240503-1</strong><br/>
-              Spazio Ex&#233;<br/>
+              Spazio Exe<br/>
               P.IVA/C.F. BNDMNR98S22Z354H<br/>
               VIA POMPONIO AMALTEO 16<br/>
               San Vito al Tagliamento, 33078 PN <br/>
               Tel: 00334686090978 <br/>
               info@spazioexe.com<br/>
-              (39)376 175 1181
+              + (39)376 175 1181
             </div>
           </div>
           
@@ -109,7 +108,6 @@
             <xsl:value-of select="/items/item/device"/><br/>         
             <xsl:value-of select="/items/item/brand"/><br/>
             <xsl:value-of select="/items/item/model"/><br/>
-            <xsl:value-of select="/items/item/left_accessory"/><br/>
             <xsl:value-of select="/items/item/device"/><br/>
             Tel:<xsl:value-of select="/items/item/phone_number"/>
           </div>
@@ -121,11 +119,29 @@
                 <th class="table-head">Descrizione</th>
                 <th  class="table-head">Costo</th>
               </tr>
-              <xsl:for-each select="/items/item/action">
-                <tr>
-                  <td><xsl:value-of select="."/>&#160; : <xsl:value-of select="../details"/></td>
-                  <td>€&#160;<xsl:value-of select="../price"/></td>
-                </tr>
+              <xsl:for-each select="/items/item">
+                
+                <xsl:choose>
+                  <!-- Condizione se acconto è maggiore di zero -->
+                  <xsl:when test="acconto > 0">
+                    <tr>
+                      <td>ciao<xsl:value-of select="."/>&#160; : <xsl:value-of select="details"/></td>
+                      <td>€&#160;<xsl:value-of select="price - acconto"/></td>
+                    </tr>
+                    <tr>
+                      <td>Acconto</td>
+                      <td>€&#160;<xsl:value-of select="acconto"/></td>
+                    </tr>
+                  </xsl:when>
+                  <!-- Condizione se acconto è uguale a zero o vuoto -->
+                  <xsl:otherwise>
+                    <tr>
+                      <td>ciao<xsl:value-of select="."/>&#160; : <xsl:value-of select="details"/></td>
+                      <td>€&#160;<xsl:value-of select="price"/></td>
+                    </tr>
+                  </xsl:otherwise>
+                </xsl:choose>
+                
               </xsl:for-each>
             </table>
           </div>
