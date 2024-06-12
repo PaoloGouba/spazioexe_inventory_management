@@ -125,7 +125,7 @@
                   <!-- Condizione se acconto è maggiore di zero -->
                   <xsl:when test="acconto > 0">
                     <tr>
-                      <td>ciao<xsl:value-of select="."/>&#160; : <xsl:value-of select="details"/></td>
+                      <td><xsl:value-of select="azione"/></td>
                       <td>€&#160;<xsl:value-of select="price - acconto"/></td>
                     </tr>
                     <tr>
@@ -136,7 +136,7 @@
                   <!-- Condizione se acconto è uguale a zero o vuoto -->
                   <xsl:otherwise>
                     <tr>
-                      <td>ciao<xsl:value-of select="."/>&#160; : <xsl:value-of select="details"/></td>
+                      <td><xsl:value-of select="azione"/></td>
                       <td>€&#160;<xsl:value-of select="price"/></td>
                     </tr>
                   </xsl:otherwise>
