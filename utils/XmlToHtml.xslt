@@ -105,10 +105,10 @@
             <h3>DETTAGLI CLIENTE</h3>
             <xsl:value-of select="/items/item/first_name"/>&#160;<xsl:value-of select="/items/item/last_name"/><br/>
             <xsl:value-of select="/items/item/request_date"/><br/>
-            <xsl:value-of select="/items/item/device"/><br/>         
-            <xsl:value-of select="/items/item/brand"/><br/>
-            <xsl:value-of select="/items/item/model"/><br/>
-            <xsl:value-of select="/items/item/device"/><br/>
+            <!-- <xsl:value-of select="/items/item/device"/><br/>-->       
+            <!-- <xsl:value-of select="/items/item/brand"/><br/>-->
+            <!-- <xsl:value-of select="/items/item/model"/><br/>-->
+            <!-- <xsl:value-of select="/items/item/device"/><br/>-->
             Tel:<xsl:value-of select="/items/item/phone_number"/>
           </div>
           
