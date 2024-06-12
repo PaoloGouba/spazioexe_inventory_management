@@ -23,7 +23,7 @@ st.set_page_config(
     }
 )
 
-@st.cache_data
+#@st.cache_data
 def load_reparations_with_retries(max_retries=3, delay=2):
     for attempt in range(max_retries):
         try:
