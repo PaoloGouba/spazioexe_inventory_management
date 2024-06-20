@@ -60,31 +60,20 @@ else:
         filtered_df = df[
             (df['Nome e Cognome'].isin(selected_names) if selected_names else df['Nome e Cognome'].notnull())
         ]
-        st.caption('Lista riparazioni')
-        #st.dataframe(filtered_df)
+
 
         valori_indice = list(filtered_df.index)
-        if len(valori_indice) != 1:
+        if len(valori_indice) != 0:
 
-            selected_index = st.multiselect('Scegli la riparazione:', options=filtered_df.index)
+            sheet_line = st.selectbox('Seleziona la riparazione:', options=filtered_df.index.unique())
+            final_sheet_df = filtered_df[(filtered_df.index.isin([sheet_line]) if sheet_line else filtered_df.index.notnull())]
 
-            fina_filtered_df = filtered_df[
-            (filtered_df.index.isin(selected_index) if selected_index else filtered_df.index.notnull())
-             ]
-            
-            st.write(fina_filtered_df)
+        else :
+            final_sheet_df = filtered_df
 
-            st.write("Valori dell'indice:", valori_indice)
-
-            if st.button("Elimina", type="secondary"):
-                st.write(f"Sei sicuro di vole eliminare questa scheda?")
-                if st.button("Elimina scheda"):
-                    remove_reparation(reparations_worksheet, valori_indice[0] + 1)
-                    st.success(f"Reparation rimossa con successo dalla riga {valori_indice[0] + 1}")
-
-    if len(filtered_df) == 1:
         try:
-            row = filtered_df.iloc[0]
+            st.write(final_sheet_df)
+            row = final_sheet_df.iloc[0]
             request_date = row['Informazioni cronologiche']
             full_name = row['Nome e Cognome']
             phone_number = row['Numero di telefono']
@@ -133,12 +122,13 @@ else:
                         mime="application/pdf"
                     )
 
-        except KeyError as e:
-            print(f"Key error: {e}")
+        except :
+            st.info("Seleziona solo una scheda per poterla scaricare")
+            #print(f"Key error: {e}")
 
 
-        except Exception as e:
-            st.info(f"Scegli la riparazione da consultare: {str(e)}")
+        #except Exception as e:
+        #    st.info(f"Scegli la riparazione da consultare: {str(e)}")
 
 st.sidebar.markdown('<small>[Help Center](https://www.osirisolutions.com/helpcenter/spazioexe)</small>', unsafe_allow_html=True)
 st.sidebar.markdown('<small>[Contact Us](mailto:paolo@osirisolutions.com)</small>', unsafe_allow_html=True)
