@@ -123,6 +123,7 @@ else:
                     )
 
         except :
+            raise
             st.info("Seleziona solo una scheda per poterla scaricare")
             #print(f"Key error: {e}")
 
